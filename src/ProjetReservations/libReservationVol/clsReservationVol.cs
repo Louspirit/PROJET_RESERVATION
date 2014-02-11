@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace libConsulteHotel
+namespace libReservationVol
 {
-    public class Class1
+    public class clsReservationVol
     {
     }
 }

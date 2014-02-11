@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace libValiderCommande
+namespace libConsulteVol
 {
-    public class Class1
+    public class clsConsulteVol
     {
     }
 }
