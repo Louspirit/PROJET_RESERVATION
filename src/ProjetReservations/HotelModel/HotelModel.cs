@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HotelModel
+namespace Model.Hotel
 {
     public class clsHotel
     {

@@ -4,7 +4,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.EnterpriseServices;
-using HotelModel;
+using Model.Hotel;
 
 namespace libConsulteHotel
 {
@@ -23,6 +23,7 @@ namespace libConsulteHotel
 
             SqlCommand myCom = new SqlCommand("dbo.sp_getHotel", myC);
             myCom.CommandType = CommandType.StoredProcedure;
+            myCom.Parameters.Add("@AEROPORT_ARRIVEE", SqlDbType.VarChar);
             myCom.Parameters["@AEROPORT_ARRIVEE"].Value = aeroport_proche;
 
              SqlDataReader reader = myCom.ExecuteReader();
@@ -34,7 +35,7 @@ namespace libConsulteHotel
                  hotel.NOM = reader.GetString(1);
                  hotel.ADRESSE = reader.GetString(2);
                  hotel.AEROPORT_PROCHE = reader.GetString(3);
-                 hotel.TARIF_NUIT = reader.GetInt32(4); ;
+                 hotel.TARIF_NUIT = reader.GetInt32(4);
                  listHotels.Add(hotel);
              }
             myCom.Dispose();

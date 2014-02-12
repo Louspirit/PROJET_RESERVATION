@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0262EA23-9A51-45F3-AB1E-43F0E9C2055E}</ProjectGuid>
+    <ProjectGuid>{86582637-841D-4F48-ADCC-D25213E54EA8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>libReservationHotel</RootNamespace>
-    <AssemblyName>libReservationHotel</AssemblyName>
+    <RootNamespace>libClient</RootNamespace>
+    <AssemblyName>libClient</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,13 +36,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsReservationHotel.cs" />
+    <Compile Include="clsClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HotelModel\HotelModel.csproj">
-      <Project>{a2912ae5-b45d-47ad-be26-688f749b577c}</Project>
-      <Name>HotelModel</Name>
+    <ProjectReference Include="..\ClassLibrary2\ClientModel.csproj">
+      <Project>{5b64b888-af60-4728-afc4-f5036067eabe}</Project>
+      <Name>ClientModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
