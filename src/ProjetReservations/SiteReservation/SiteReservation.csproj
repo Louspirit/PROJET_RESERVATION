@@ -49,6 +49,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ResultatsRecherche.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -56,6 +57,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResultatsRecherche.aspx.cs">
+      <DependentUpon>ResultatsRecherche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultatsRecherche.aspx.designer.cs">
+      <DependentUpon>ResultatsRecherche.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -75,6 +83,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libConsulteHotel\libConsulteHotel.csproj">
+      <Project>{2535a991-a843-4aa0-aaab-584d7929b5c3}</Project>
+      <Name>libConsulteHotel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libConsulteVol\libConsulteVol.csproj">
+      <Project>{d8aba5cc-db27-4b77-ad9f-bf12191a065e}</Project>
+      <Name>libConsulteVol</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

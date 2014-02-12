@@ -7,23 +7,29 @@ using System.EnterpriseServices;
 
 namespace libConsulteHotel
 {
-    public class clsConsulteHotel : ServicedComponent
+    public class clsConsulteHotel
     {
         public clsConsulteHotel()
         {
         }
+
         [AutoComplete]
-        public int clsConsulteHotel  ()
+        public int getHotels(string aeroport_proche)
         {
+            SqlDataReader reader;
             SqlConnection MyC = new SqlConnection();
             MyC.ConnectionString = "Data Source=Environment.MachineName;Initial Catalog=PROJET_DATA;Integrated Security = true";
             MyC.Open();
-            SqlCommand MyCom = new SqlCommand("sp_getHotel", MyC);
+
+            SqlCommand MyCom = new SqlCommand("dbo.sp_getHotel", MyC);
             MyCom.CommandType = CommandType.StoredProcedure;
-            //int Res = Convert.ToInt32 (MyCom.ExecuteScalar());
+
+            reader = MyCom.ExecuteReader();
+            
+
             MyCom.Dispose();
             MyC.Close();
-            return Res;
+            return 0;
         }
 
     }
