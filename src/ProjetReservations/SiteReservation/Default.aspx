@@ -14,14 +14,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SITE DE RESERVATION<br />
         <br />
 &nbsp;&nbsp;&nbsp; Sélectionner une ville de départ :&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="listVilleDepart" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOM" DataValueField="NOM">
+        <asp:DropDownList ID="listVilleDepart" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOM" DataValueField="ID">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=CLMENTGUYON76A9\SQLEXPRESS;Initial Catalog=PROJET_DATA;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="sp_getAeroportsDepart" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         <br />
 &nbsp;&nbsp;&nbsp;
         <br />
 &nbsp;&nbsp;&nbsp; Sélectionner une ville d&#39;arrivée :&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="listVilleArrivee" runat="server" DataSourceID="SqlDataSource2" DataTextField="NOM" DataValueField="NOM">
+        <asp:DropDownList ID="listVilleArrivee" runat="server" DataSourceID="SqlDataSource2" DataTextField="NOM" DataValueField="ID">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PROJET_DATAConnectionString %>" SelectCommand="sp_getAeroportsArrivee" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         <br />
@@ -55,7 +55,7 @@
         <br />
         &nbsp;&nbsp;&nbsp;
         Date du départ :
-        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+        <asp:Calendar ID="dateDepart" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
             <NextPrevStyle VerticalAlign="Bottom" />
             <OtherMonthDayStyle ForeColor="#808080" />
@@ -67,7 +67,7 @@
         </asp:Calendar>
 &nbsp;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="buttonReservation" runat="server" Text="Rechercher" PostBackUrl="ResultatsRecherche.aspx"/>
+        <asp:Button ID="buttonReservation" runat="server" Text="Rechercher" OnClick="rechercherVolsHotels"/>
     
     </div>
     </form>

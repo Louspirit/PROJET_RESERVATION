@@ -85,13 +85,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libConsulteHotel\libConsulteHotel.csproj">
-      <Project>{2535a991-a843-4aa0-aaab-584d7929b5c3}</Project>
-      <Name>libConsulteHotel</Name>
+    <ProjectReference Include="..\ClassLibrary1\VolModel.csproj">
+      <Project>{9529c3dd-01cf-497f-8b70-4246c472c672}</Project>
+      <Name>VolModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\libConsulteVol\libConsulteVol.csproj">
-      <Project>{d8aba5cc-db27-4b77-ad9f-bf12191a065e}</Project>
-      <Name>libConsulteVol</Name>
+    <ProjectReference Include="..\WSHotelConsultation\WSHotelConsultation.csproj">
+      <Project>{75968abf-eb1b-448a-8798-ed2f8d5f4169}</Project>
+      <Name>WSHotelConsultation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSVolConsultation\WSVolConsultation.csproj">
+      <Project>{af420ad2-b233-4a6e-a162-d73096976465}</Project>
+      <Name>WSVolConsultation</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

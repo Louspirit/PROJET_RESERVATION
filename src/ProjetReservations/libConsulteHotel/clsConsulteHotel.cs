@@ -4,43 +4,32 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.EnterpriseServices;
-using Model.Hotel;
 
 namespace libConsulteHotel
 {
-    public class clsConsulteHotel: ServicedComponent
+    public class clsConsulteHotel
     {
         public clsConsulteHotel()
         {
         }
 
-        [AutoComplete]
-        public List<clsHotel> getHotels(string aeroport_proche)
+        public DataSet getHotels(string aeroport_proche)
         {
             SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source=Environment.MachineName;Initial Catalog=PROJET_DATA;Integrated Security = true";
+            myC.ConnectionString = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=\"PROJET_DATA\";Integrated Security=True";
             myC.Open();
 
-            SqlCommand myCom = new SqlCommand("dbo.sp_getHotel", myC);
-            myCom.CommandType = CommandType.StoredProcedure;
-            myCom.Parameters.Add("@AEROPORT_ARRIVEE", SqlDbType.VarChar);
-            myCom.Parameters["@AEROPORT_ARRIVEE"].Value = aeroport_proche;
+            SqlDataAdapter myCom = new SqlDataAdapter("dbo.sp_getHotels", myC);
+            myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
+            myCom.SelectCommand.Parameters.Add("@AEROPORT_PROCHE", SqlDbType.VarChar);
+            myCom.SelectCommand.Parameters["@AEROPORT_PROCHE"].Value = aeroport_proche;
 
-             SqlDataReader reader = myCom.ExecuteReader();
-             List<clsHotel> listHotels = new List<clsHotel>();
-             while (reader.Read())
-             {
-                 clsHotel hotel = new clsHotel();
-                 hotel.ID = reader.GetInt32(0);
-                 hotel.NOM = reader.GetString(1);
-                 hotel.ADRESSE = reader.GetString(2);
-                 hotel.AEROPORT_PROCHE = reader.GetString(3);
-                 hotel.TARIF_NUIT = reader.GetInt32(4);
-                 listHotels.Add(hotel);
-             }
+            DataSet hotels = new DataSet();
+            myCom.Fill(hotels, "table");
+
             myCom.Dispose();
             myC.Close();
-            return listHotels;
+            return hotels;
         }
     }
 }

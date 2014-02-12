@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Data;
 using System.Web.Services;
+using libConsulteHotel;
 
 namespace WSHotelConsultation
 {
@@ -15,9 +17,9 @@ namespace WSHotelConsultation
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public DataSet getHotels(string aeroport_Arrivee)
         {
-            return "Hello World";
+            return (new clsConsulteHotel()).getHotels(aeroport_Arrivee);
         }
     }
 }
