@@ -11,13 +11,26 @@ namespace SiteReservation
 
         protected void rechercherVolsHotels(object sender, EventArgs e)
         {
-            Session["aeroport_depart"] = listVilleDepart.SelectedValue;
-            Session["aeroport_arrivee"] = listVilleArrivee.SelectedValue;
-            Session["duree"] = dureeSejour.SelectedValue;
-            Session["date_depart_annee"] = dateDepart.SelectedDate.Year;
-            Session["date_depart_mois"] = dateDepart.SelectedDate.Month;
-            Session["date_depart_jour"] = dateDepart.SelectedDate.Day;
-            Response.Redirect("ResultatsRecherche.aspx");
+            string aeroport_depart = listVilleDepart.SelectedValue;
+            string aeroport_arrivee = listVilleArrivee.SelectedValue;
+            string duree = dureeSejour.SelectedValue;
+            int date_depart_annee = dateDepart.SelectedDate.Year;
+            int date_depart_mois = dateDepart.SelectedDate.Month;
+            int date_depart_jour = dateDepart.SelectedDate.Day;
+            //controle sur les données saisies
+            if(null != aeroport_depart && null != aeroport_arrivee && null != duree && 1 != date_depart_annee && 1 != date_depart_mois && 1 != date_depart_jour){
+                Session["aeroport_depart"] = aeroport_depart;
+                Session["aeroport_arrivee"] = aeroport_arrivee;
+                Session["duree"] = duree;
+                Session["date_depart_annee"] = date_depart_annee;
+                Session["date_depart_mois"] = date_depart_mois;
+                Session["date_depart_jour"] = date_depart_jour;
+                Response.Redirect("ResultatsRecherche.aspx");
+            }
+            else
+            {
+                errorMsg.Text = "Veuillez vérifier votre saisie.";
+            }
         }
     }
 }

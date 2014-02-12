@@ -40,6 +40,15 @@ namespace SiteReservation {
         protected global::System.Web.UI.WebControls.GridView listVols;
         
         /// <summary>
+        /// Contrôle selectedVol.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label selectedVol;
+        
+        /// <summary>
         /// Contrôle listHotels.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace SiteReservation {
         protected global::System.Web.UI.WebControls.GridView listHotels;
         
         /// <summary>
+        /// Contrôle selectedHotel.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label selectedHotel;
+        
+        /// <summary>
         /// Contrôle buttonValiderCommande.
         /// </summary>
         /// <remarks>
@@ -56,23 +74,5 @@ namespace SiteReservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button buttonValiderCommande;
-        
-        /// <summary>
-        /// Contrôle selectedVol.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox selectedVol;
-        
-        /// <summary>
-        /// Contrôle selectedHotel.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox selectedHotel;
     }
 }

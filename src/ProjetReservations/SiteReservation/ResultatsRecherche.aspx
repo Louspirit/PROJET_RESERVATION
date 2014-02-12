@@ -21,21 +21,21 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:GridView ID="listVols" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="selectionVol">
         </asp:GridView>
+        <asp:Label ID="selectedVol" runat="server"></asp:Label>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp; Sélectionner un hôtel :&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
-        <asp:GridView ID="listHotels" runat="server" AutoGenerateSelectButton="True">
+        <asp:GridView ID="listHotels" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="selectionHotel">
         </asp:GridView>
+        <asp:Label ID="selectedHotel" runat="server"></asp:Label>
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="buttonValiderCommande" runat="server" Text="Valider votre commande" />
     
         <br />
-        <asp:TextBox ID="selectedVol" runat="server" Visible="False"></asp:TextBox>
-        <asp:TextBox ID="selectedHotel" runat="server" Visible="False"></asp:TextBox>
     
     </div>
     </form>
