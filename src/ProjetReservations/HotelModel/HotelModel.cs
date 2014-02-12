@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Model.Client;
 
 namespace Model.Hotel
 {
-    public class clsHotel
+    public class clsHotelMSMQ
     {
-        public int ID { get; set; }
-        public String NOM { get; set; }
-        public String ADRESSE { get; set; }
-        public String AEROPORT_PROCHE { get; set; }
-        public double TARIF_NUIT { get; set; }
+        public int ID { get; set; } //vaudra probablement null lors de la lecture dans MSMQ
+        public int ID_HOTEL { get; set; }
+        public DateTime DATE_ARRIVEE { get; set; }
+        public int DUREE { get; set; }
+        public double MONTANT { get; set; }
+        public clsClient CLIENT { get; set; }
 
-        public clsHotel() { }
+        public clsHotelMSMQ() { }
     }
 
     public class clsHotelEnregistrement
