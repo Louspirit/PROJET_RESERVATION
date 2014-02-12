@@ -6,21 +6,11 @@ using System.Data.SqlClient;
 using System.EnterpriseServices;
 using Model.Vol;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using System.Data.SqlClient;
-using System.EnterpriseServices;
-using libClient;
-using Model.Hotel;
-using Model.Client;
-
-namespace libReservationHotel
+namespace libConsulteVol
 {
-    public class clsReservationHotel : ServicedComponent
+    public class clsConsulteVol
     {
-        public clsReservationHotel()
+        public clsConsulteVol()
         {
         }
 
@@ -44,24 +34,6 @@ namespace libReservationHotel
             MyCom.SelectCommand.Parameters.Add("@DATE_DEPART_MAX", SqlDbType.DateTime);
             MyCom.SelectCommand.Parameters["@DATE_DEPART_MAX"].Value = new DateTime(annee, mois, jour, 23, 59, 59);
 
-            /*SqlDataReader reader = MyCom.ExecuteReader();//MyCom.ExecuteScalar(); 
-            List<clsVol> list = new List<clsVol>();
-            while (reader.Read())
-            {
-                clsVol vol = new clsVol();
-                vol.ID = reader.GetInt32(0);
-                Console.WriteLine("id : " + vol.ID);
-                vol.AEROPORT_DEPART = reader.GetString(1);
-                Console.WriteLine("aero depart : " + vol.AEROPORT_DEPART);
-                vol.AEROPORT_ARRIVEE = reader.GetString(2);
-                Console.WriteLine("aero_arrivee : " + vol.AEROPORT_ARRIVEE);
-                vol.DATE_DEPART = reader.GetDateTime(3);
-                Console.WriteLine("date : " + vol.DATE_DEPART);
-                vol.TARIF = reader.GetDouble(4);
-                Console.WriteLine("tarif : " + vol.TARIF);
-                list.Add(vol);
-            }
-            reader.Close();*/
             DataSet DS = new DataSet();
             MyCom.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             MyCom.Fill(DS, "table");
