@@ -48,7 +48,7 @@ namespace libClient
         }
 
         [AutoComplete]
-        public void setClient(string nom, String prenom,String adresse, int numeroCarte)
+        public void addClient(string nom, String prenom,String adresse, String numeroCarte)
         {
             SqlConnection myC = new SqlConnection();
             myC.ConnectionString = "Data Source=Environment.MachineName;Initial Catalog=PROJET_RESERVATION;Integrated Security = true";
