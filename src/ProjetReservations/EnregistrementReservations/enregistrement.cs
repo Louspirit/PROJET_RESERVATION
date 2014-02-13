@@ -23,11 +23,11 @@ namespace EnregistrementReservations
         private void btn_reservVol_Click(object sender, EventArgs e)
         {
             //ouverture de la file MSMQ
-            MessageQueue MyMQ = new MessageQueue(@".\private$\emnbank2014");
+            MessageQueue MyMQ = new MessageQueue(@".\private$\queuereservationvol");
             //récupération sans vider la file d'un message, de type clsVolEnregistrement
             MyMQ.Formatter = new XmlMessageFormatter(new Type[] { typeof(clsVolMSMQ) });
 
-            var message = (clsVolMSMQ)MyMQ.Peek().Body;
+            clsVolMSMQ message = (clsVolMSMQ)MyMQ.Peek().Body;
             clsVolMSMQ client = message.CLIENT;
 
             //Enregistrement de la réservation de vol ( dans libValiderCommande)
@@ -47,6 +47,11 @@ namespace EnregistrementReservations
                 //txtTransfert.AppendText("Impossible de transférer " + message.Montant + " du compte " + message.CD + " vers " + message.CC + "\n");
             }
             MyMQ.Close();
+        }
+
+        private void btn_reservHotel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
