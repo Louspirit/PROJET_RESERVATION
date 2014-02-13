@@ -66,6 +66,8 @@ namespace SiteReservation
                 MyMQ2.Send(resaVol, "Reservation vol, client " + nomClient + " - " + prenomClient);
                 MyMQ2.Close();
 
+                //fin des push
+                btnValiderCommande.Enabled = false;
                 errorMsg.Text = "Votre réservation a bien été prise en compte.";
             }
         }

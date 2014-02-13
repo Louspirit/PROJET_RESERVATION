@@ -6,7 +6,7 @@ namespace Model.Client
 {
     public class clsClient
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public String NOM { get; set; }
         public String PRENOM { get; set; }
         public String ADRESSE { get; set; }

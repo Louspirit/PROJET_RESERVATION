@@ -7,7 +7,7 @@ namespace Model.Vol
 {
     public class clsVolMSMQ
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public int ID_VOL { get; set; }
         public double MONTANT { get; set; }
         public clsClient CLIENT { get; set; }
@@ -17,7 +17,7 @@ namespace Model.Vol
 
     public class clsVolEnregistrement
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public int ID_CLIENT { get; set; }
         public String ID_VOL { get; set; }
         public double MONTANT { get; set; }

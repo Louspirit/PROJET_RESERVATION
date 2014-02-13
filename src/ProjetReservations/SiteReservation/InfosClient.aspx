@@ -50,15 +50,15 @@
 &nbsp;&nbsp;&nbsp; <strong>Veuillez saisir les informations suivantes :</strong><br />
         <br />
 &nbsp;&nbsp;&nbsp; Nom* :&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="tbNomClient" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tbNomClient" runat="server" MaxLength="50"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp; Prenom* :&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="tbPrenomClient" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tbPrenomClient" runat="server" MaxLength="50"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp; Adresse* :&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="tbAdresseClient" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tbAdresseClient" runat="server" MaxLength="200"></asp:TextBox>
         <br />
-&nbsp;&nbsp;&nbsp; Numéro de carte bancaire* :<asp:TextBox ID="tbNumCarteClient" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp; Numéro de carte bancaire* :<asp:TextBox ID="tbNumCarteClient" runat="server" MaxLength="20"></asp:TextBox>
         <br />
         <br />
         <br />

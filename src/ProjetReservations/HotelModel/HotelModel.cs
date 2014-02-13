@@ -7,7 +7,7 @@ namespace Model.Hotel
 {
     public class clsHotelMSMQ
     {
-        public int ID { get; set; } //vaudra probablement null lors de la lecture dans MSMQ
+        public int? ID { get; set; } //vaudra probablement null lors de la lecture dans MSMQ
         public int ID_HOTEL { get; set; }
         public DateTime DATE_ARRIVEE { get; set; }
         public int DUREE { get; set; }
@@ -19,7 +19,7 @@ namespace Model.Hotel
 
     public class clsHotelEnregistrement
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public int ID_CLIENT { get; set; }
         public String ID_HOTEL { get; set; }
         public DateTime DATE_ARRIVEE { get; set; }
