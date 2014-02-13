@@ -8,8 +8,11 @@ using System.Windows.Forms;
 using System.Messaging;
 using System.EnterpriseServices;
 using Model.Vol;
+using Model.Hotel;
 using libReservationVol;
-using libReservationHotel; 
+using libReservationHotel;
+using libValiderCommande;
+using Model.Client;
 
 namespace EnregistrementReservations
 {
@@ -28,23 +31,54 @@ namespace EnregistrementReservations
             MyMQ.Formatter = new XmlMessageFormatter(new Type[] { typeof(clsVolMSMQ) });
 
             var message = (clsVolMSMQ)MyMQ.Peek().Body;
-            clsVolMSMQ client = message.CLIENT;
+            clsClient client = message.CLIENT;
+            clsValiderCommande myC = new clsValiderCommande();
 
             //Enregistrement de la réservation de vol ( dans libValiderCommande)
-            bool ResT = effectuerReservationVol(message.ID, message.MONTANT, client.NOM, client.PRENOM, client.ADRESSE, client.NUM_CARTE);
+            bool ResT = myC.effectuerReservationVol(message.ID_VOL, message.MONTANT, client.NOM, client.PRENOM, client.ADRESSE, client.NUM_CARTE);
 
             //Transaction OK
             if (ResT == true)
             {
 
-                //txtTransfert.AppendText("Transfert de " + message.Montant + " du compte " + message.CD + " vers " + message.CC + "\n");
+                txtReservVol.AppendText("La réservation du vol " + message.ID + " de " + client.PRENOM + "  " + client.NOM + " s'est déroulée avec succès.");
                 //Zone critique : le Receive devrait être sous forme de composant lui aussi dans le serveu d'application
                 MyMQ.Receive();
             }
             //Transaction KO
             else
             {
-                //txtTransfert.AppendText("Impossible de transférer " + message.Montant + " du compte " + message.CD + " vers " + message.CC + "\n");
+                txtReservVol.AppendText("La réservation du vol " + message.ID_VOL + " de " + client.PRENOM + "  " + client.NOM + " n'a pas pu aboutir.");
+            }
+            MyMQ.Close();
+        }
+
+        private void btn_reservHotel_Click(object sender, EventArgs e)
+        {
+            //ouverture de la file MSMQ
+            MessageQueue MyMQ = new MessageQueue(@".\private$\emnbank2014");
+            //récupération sans vider la file d'un message, de type clsVolEnregistrement
+            MyMQ.Formatter = new XmlMessageFormatter(new Type[] { typeof(clsHotelMSMQ) });
+
+            var message = (clsHotelMSMQ)MyMQ.Peek().Body;
+            clsClient client = message.CLIENT;
+            clsValiderCommande myC = new clsValiderCommande();
+
+            //Enregistrement de la réservation de vol ( dans libValiderCommande)
+            bool ResT = myC.effectuerReservationVol(message.ID_HOTEL, message.MONTANT, client.NOM, client.PRENOM, client.ADRESSE, client.NUM_CARTE);
+
+            //Transaction OK
+            if (ResT == true)
+            {
+
+                txtReservHotel.AppendText("La réservation de l'hôtel " + message.ID_HOTEL + " de " + client.PRENOM + "  " + client.NOM + " s'est déroulée avec succès.");
+                //Zone critique : le Receive devrait être sous forme de composant lui aussi dans le serveu d'application
+                MyMQ.Receive();
+            }
+            //Transaction KO
+            else
+            {
+                txtReservHotel.AppendText("La réservation de l'hôtel " + message.ID + " de " + client.PRENOM + "  " + client.NOM + " n'a pas pu aboutir.");
             }
             MyMQ.Close();
         }
