@@ -13,12 +13,13 @@ namespace SiteReservation
         {
             string aeroport_depart = listVilleDepart.SelectedValue;
             string aeroport_arrivee = listVilleArrivee.SelectedValue;
-            string duree = dureeSejour.SelectedValue;
+            int duree = Convert.ToInt32(dureeSejour.SelectedValue);
             int date_depart_annee = dateDepart.SelectedDate.Year;
             int date_depart_mois = dateDepart.SelectedDate.Month;
             int date_depart_jour = dateDepart.SelectedDate.Day;
             //controle sur les données saisies
             if(null != aeroport_depart && null != aeroport_arrivee && null != duree && 1 != date_depart_annee && 1 != date_depart_mois && 1 != date_depart_jour){
+                errorMsg.Text = "";
                 Session["aeroport_depart"] = aeroport_depart;
                 Session["aeroport_arrivee"] = aeroport_arrivee;
                 Session["duree"] = duree;

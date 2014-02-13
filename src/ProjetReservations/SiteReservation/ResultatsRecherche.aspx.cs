@@ -23,9 +23,9 @@ namespace SiteReservation
             int date_depart_annee = (int)Session["date_depart_annee"];
             int date_depart_mois = (int)Session["date_depart_mois"];
             int date_depart_jour = (int)Session["date_depart_jour"];
-            string duree = ((String) Session["duree"]);
+            int duree = (int)Session["duree"];
 
-            labelRequestParam.Text = "Votre recherche : Depart "+aeroport_depart+", Arrivee "+aeroport_arrivee+", Duree "+duree +", Date "+date_depart_annee.ToString()+"-"+date_depart_mois.ToString()+"-"+date_depart_jour.ToString();
+            labelRequestParam.Text = "Depart "+aeroport_depart+", Arrivee "+aeroport_arrivee+", Duree "+duree +", Date "+date_depart_annee.ToString()+"-"+date_depart_mois.ToString()+"-"+date_depart_jour.ToString();
     
             //récupération des vols
             DataSet vols = (new WSVolConsultation.Service1()).getVols(aeroport_depart, aeroport_arrivee, date_depart_annee, date_depart_mois, date_depart_jour);
@@ -42,6 +42,7 @@ namespace SiteReservation
             hotels.Tables[0].Columns[1].ColumnName = "Nom de l'hotel";
             hotels.Tables[0].Columns[2].ColumnName = "Adresse";
             hotels.Tables[0].Columns[4].ColumnName = "Tarif / nuit";
+            hotels.Tables[0].Columns.RemoveAt(3);
             listHotels.DataSource = hotels.Tables[0];
             listHotels.DataBind();
         }
@@ -50,12 +51,48 @@ namespace SiteReservation
         {
             GridViewRow row = listVols.SelectedRow;
             selectedVol.Text = row.Cells[1].Text;
+            selectedVolDepart.Text = row.Cells[2].Text;
+            selectedVolArrivee.Text = row.Cells[3].Text;
+            selectedVolDate.Text = row.Cells[4].Text;
+            selectedVolTarif.Text = row.Cells[5].Text;
         }
 
         protected void selectionHotel(object sender, EventArgs e)
         {
-            GridViewRow row = listVols.SelectedRow;
+            GridViewRow row = listHotels.SelectedRow;
             selectedHotel.Text = row.Cells[1].Text;
+            selectedHotelNom.Text = row.Cells[2].Text;
+            selectedHotelAdresse.Text = row.Cells[3].Text;
+            selectedHotelTarifNuit.Text = row.Cells[4].Text;
+        }
+
+        protected void validerSelection(object sender, EventArgs e)
+        {
+            if (selectedHotel.Text == "" || selectedVol.Text == "")
+            {
+                //vol ou hotel non sélectionné
+                errorMsg.Text = "Vous devez sélectionner un vol et un hotel pour votre séjour.";
+            }
+            else
+            {
+                errorMsg.Text = "";
+                //tout est ok, enregistrement en session des donnees
+                Session["volId"] = Convert.ToInt32(selectedVol.Text);
+                Session["volDepart"] = selectedVolDepart.Text;
+                Session["volArrivee"] = selectedVolArrivee.Text;
+                Session["volDate"] = selectedVolDate.Text;
+                double tarifVol = Convert.ToDouble(selectedVolTarif.Text);
+                Session["volTarif"] = tarifVol;
+                Session["hotelID"] = Convert.ToInt32(selectedHotel.Text);
+                Session["hotelNom"] = selectedHotelNom.Text;
+                Session["hotelAdresse"] = selectedHotelAdresse.Text;
+                int duree = (int)Session["duree"];
+                double tarifNuit = Convert.ToDouble(selectedHotelTarifNuit.Text);
+                double tarifTotalHotel = duree * tarifNuit;
+                Session["hotelTarifTotal"] = tarifTotalHotel;
+                Session["montantTotalReservation"] = tarifVol + tarifTotalHotel;
+                Response.Redirect("InfosClient.aspx");
+            }
         }
     }
 }

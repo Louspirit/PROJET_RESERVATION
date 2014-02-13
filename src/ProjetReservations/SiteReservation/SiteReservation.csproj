@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -49,6 +50,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InfosClient.aspx" />
     <Content Include="ResultatsRecherche.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -57,6 +59,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InfosClient.aspx.cs">
+      <DependentUpon>InfosClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfosClient.aspx.designer.cs">
+      <DependentUpon>InfosClient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ResultatsRecherche.aspx.cs">
       <DependentUpon>ResultatsRecherche.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,6 +97,14 @@
     <ProjectReference Include="..\ClassLibrary1\VolModel.csproj">
       <Project>{9529c3dd-01cf-497f-8b70-4246c472c672}</Project>
       <Name>VolModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary2\ClientModel.csproj">
+      <Project>{5b64b888-af60-4728-afc4-f5036067eabe}</Project>
+      <Name>ClientModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelModel\HotelModel.csproj">
+      <Project>{a2912ae5-b45d-47ad-be26-688f749b577c}</Project>
+      <Name>HotelModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\WSHotelConsultation\WSHotelConsultation.csproj">
       <Project>{75968abf-eb1b-448a-8798-ed2f8d5f4169}</Project>

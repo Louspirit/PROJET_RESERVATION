@@ -10,7 +10,7 @@
 namespace SiteReservation {
     
     
-    public partial class _ResultatsRecherche {
+    public partial class InfosClient {
         
         /// <summary>
         /// Contrôle form1.
@@ -22,121 +22,121 @@ namespace SiteReservation {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Contrôle labelRequestParam.
+        /// Contrôle rappelVolDepart.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelRequestParam;
+        protected global::System.Web.UI.WebControls.Label rappelVolDepart;
         
         /// <summary>
-        /// Contrôle listVols.
+        /// Contrôle rappelVolArrivee.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView listVols;
+        protected global::System.Web.UI.WebControls.Label rappelVolArrivee;
         
         /// <summary>
-        /// Contrôle selectedVol.
+        /// Contrôle rappelVolDate.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedVol;
+        protected global::System.Web.UI.WebControls.Label rappelVolDate;
         
         /// <summary>
-        /// Contrôle selectedVolDepart.
+        /// Contrôle rappelVolMontant.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedVolDepart;
+        protected global::System.Web.UI.WebControls.Label rappelVolMontant;
         
         /// <summary>
-        /// Contrôle selectedVolArrivee.
+        /// Contrôle rappelHotelNom.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedVolArrivee;
+        protected global::System.Web.UI.WebControls.Label rappelHotelNom;
         
         /// <summary>
-        /// Contrôle selectedVolDate.
+        /// Contrôle rappelHotelDuree.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedVolDate;
+        protected global::System.Web.UI.WebControls.Label rappelHotelDuree;
         
         /// <summary>
-        /// Contrôle selectedVolTarif.
+        /// Contrôle rappelHotelMontantTotal.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedVolTarif;
+        protected global::System.Web.UI.WebControls.Label rappelHotelMontantTotal;
         
         /// <summary>
-        /// Contrôle listHotels.
+        /// Contrôle montantTotalReservation.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView listHotels;
+        protected global::System.Web.UI.WebControls.Label montantTotalReservation;
         
         /// <summary>
-        /// Contrôle selectedHotel.
+        /// Contrôle tbNomClient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedHotel;
+        protected global::System.Web.UI.WebControls.TextBox tbNomClient;
         
         /// <summary>
-        /// Contrôle selectedHotelNom.
+        /// Contrôle tbPrenomClient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedHotelNom;
+        protected global::System.Web.UI.WebControls.TextBox tbPrenomClient;
         
         /// <summary>
-        /// Contrôle selectedHotelAdresse.
+        /// Contrôle tbAdresseClient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedHotelAdresse;
+        protected global::System.Web.UI.WebControls.TextBox tbAdresseClient;
         
         /// <summary>
-        /// Contrôle selectedHotelTarifNuit.
+        /// Contrôle tbNumCarteClient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label selectedHotelTarifNuit;
+        protected global::System.Web.UI.WebControls.TextBox tbNumCarteClient;
         
         /// <summary>
-        /// Contrôle buttonValiderCommande.
+        /// Contrôle btnValiderCommande.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonValiderCommande;
+        protected global::System.Web.UI.WebControls.Button btnValiderCommande;
         
         /// <summary>
         /// Contrôle errorMsg.
