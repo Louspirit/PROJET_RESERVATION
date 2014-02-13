@@ -77,6 +77,10 @@
       <Project>{9529c3dd-01cf-497f-8b70-4246c472c672}</Project>
       <Name>VolModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary2\ClientModel.csproj">
+      <Project>{5b64b888-af60-4728-afc4-f5036067eabe}</Project>
+      <Name>ClientModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HotelModel\HotelModel.csproj">
       <Project>{a2912ae5-b45d-47ad-be26-688f749b577c}</Project>
       <Name>HotelModel</Name>
@@ -88,6 +92,10 @@
     <ProjectReference Include="..\libReservationVol\libReservationVol.csproj">
       <Project>{88c42ad1-f169-4bd7-a51b-13562be7a906}</Project>
       <Name>libReservationVol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libValiderCommande\libValiderCommande.csproj">
+      <Project>{f47ef90a-a6e8-4bea-9b13-01d1dbeb5246}</Project>
+      <Name>libValiderCommande</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,19 +11,19 @@ namespace libValiderCommande
         public clsValiderCommande() { }
 
         [AutoComplete]
-        public bool effectuerReservationVol(message.ID, message.MONTANT, client.NOM, client.PRENOM, client.ADRESSE, client.NUM_CARTE)
+        public bool effectuerReservationVol(int idVol, double montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte)
         {
-            clsReservationVol MyC = new clsReservationVol();
-            bool reservation =  setReservationVol();
-            return return reservation;
+            clsReservationVol myC = new clsReservationVol();
+            bool reservation =  myC.setReservationVol(idVol, montant, nomClient, prenomClient, adresseClient, numeroCarte);
+            return reservation;
         }
 
         [AutoComplete]
-        public bool effectuerReservationHotel(message.ID, message.MONTANT, client.NOM, client.PRENOM, client.ADRESSE, client.NUM_CARTE)
+        public bool effectuerReservationHotel(int idHotel, DateTime dateArrivee, int duree, double montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte)
         {
-            clsReservationHotel MyC = new clsReservationHotel();
-            bool reservation =  setReservationHotel();
-            return return reservation;
+            clsReservationHotel myC = new clsReservationHotel();
+            bool reservation =  myC.setReservationHotel(idHotel, dateArrivee, duree , montant, nomClient, prenomClient, adresseClient, numeroCarte);
+            return reservation;
         }
 
     }

@@ -17,10 +17,10 @@ namespace libReservationHotel
         }
 
      [AutoComplete]
-        public void setReservationHotel(int idHotel,DateTime dateArrivee,int duree , int montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte )
+        public bool setReservationHotel(int idHotel,DateTime dateArrivee,int duree , double montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte )
         {
             SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source="+Environment.MachineName+";Initial Catalog=PROJET_RESERVATIONS;Integrated Security = true";
+            myC.ConnectionString = "Data Source="+Environment.MachineName+"\\SQLEXPRESS;Initial Catalog=\"PROJET_RESERVATIONS\";Integrated Security=True";
             myC.Open();
             // Vérification que le client n'existe pas déjà 
             clsLibClient myClient = new clsLibClient();
@@ -49,6 +49,8 @@ namespace libReservationHotel
             myCom.ExecuteNonQuery();
             myCom.Dispose();
             myC.Close();
+
+            return true;
         }
     }
 }
