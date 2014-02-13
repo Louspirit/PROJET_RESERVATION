@@ -17,7 +17,7 @@ namespace libReservationVol
         }
 
         [AutoComplete]
-        public void setReservationVol(int idVol, int montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte)
+        public bool setReservationVol(int idVol, int montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte)
         {
             SqlConnection myC = new SqlConnection();
             myC.ConnectionString = "Data Source=" + Environment.MachineName + ";Initial Catalog=PROJET_RESERVATIONS;Integrated Security = true";
@@ -44,6 +44,7 @@ namespace libReservationVol
             myCom.ExecuteNonQuery();
             myCom.Dispose();
             myC.Close();
+            return true;
         }
     }
 }

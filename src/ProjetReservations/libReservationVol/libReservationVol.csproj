@@ -39,6 +39,20 @@
     <Compile Include="clsReservationVol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\VolModel.csproj">
+      <Project>{9529c3dd-01cf-497f-8b70-4246c472c672}</Project>
+      <Name>VolModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary2\ClientModel.csproj">
+      <Project>{5b64b888-af60-4728-afc4-f5036067eabe}</Project>
+      <Name>ClientModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libClient\libClient.csproj">
+      <Project>{86582637-841d-4f48-adcc-d25213e54ea8}</Project>
+      <Name>libClient</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

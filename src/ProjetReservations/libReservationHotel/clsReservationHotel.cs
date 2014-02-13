@@ -20,7 +20,7 @@ namespace libReservationHotel
         public void setReservationHotel(int idHotel,DateTime dateArrivee,int duree , int montant, String nomClient, String prenomClient, String adresseClient, String numeroCarte )
         {
             SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source="+Environment.MachineName+";Initial Catalog=PROJET_RESERVATION;Integrated Security = true";
+            myC.ConnectionString = "Data Source="+Environment.MachineName+";Initial Catalog=PROJET_RESERVATIONS;Integrated Security = true";
             myC.Open();
             // Vérification que le client n'existe pas déjà 
             clsLibClient myClient = new clsLibClient();

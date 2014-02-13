@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("libValiderCommande")]
+[assembly: AssemblyTitle("EnregistrementReservations")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("libValiderCommande")]
+[assembly: AssemblyProduct("EnregistrementReservations")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("b3d4bf38-0096-4cf1-b426-efd1b465f7d2")]
+[assembly: Guid("469f81d8-8d47-4119-a5f9-3276aae9ed6d")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
