@@ -106,6 +106,10 @@
       <Project>{a2912ae5-b45d-47ad-be26-688f749b577c}</Project>
       <Name>HotelModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\libConsulteAeroports\libConsulteAeroports.csproj">
+      <Project>{e80a422e-a2eb-4e1b-9428-ea2b6e5194ff}</Project>
+      <Name>libConsulteAeroports</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WSHotelConsultation\WSHotelConsultation.csproj">
       <Project>{75968abf-eb1b-448a-8798-ed2f8d5f4169}</Project>
       <Name>WSHotelConsultation</Name>

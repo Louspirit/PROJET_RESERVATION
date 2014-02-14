@@ -3,11 +3,28 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using libConsulteAeroports;
 
 namespace SiteReservation
 {
     public partial class _Default : System.Web.UI.Page
     {
+        clsConsulteAeroports consultAeroports;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            consultAeroports = new clsConsulteAeroports();
+            //récupération des villes de départ
+            listVilleDepart.DataSource = consultAeroports.getAeroportsDepart().Tables[0];
+            listVilleDepart.DataTextField = "NOM";
+            listVilleDepart.DataValueField = "ID";
+            listVilleDepart.DataBind();
+            //récupération des villes d'arrivée
+            listVilleArrivee.DataSource = consultAeroports.getAeroportsArrivee().Tables[0];
+            listVilleArrivee.DataTextField = "NOM";
+            listVilleArrivee.DataValueField = "ID";
+            listVilleArrivee.DataBind();
+        }
 
         protected void rechercherVolsHotels(object sender, EventArgs e)
         {

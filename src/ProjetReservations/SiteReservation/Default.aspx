@@ -14,16 +14,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SITE DE RESERVATION<br />
         <br />
 &nbsp;&nbsp;&nbsp; Sélectionner une ville de départ :&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="listVilleDepart" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOM" DataValueField="ID">
+        <asp:DropDownList ID="listVilleDepart" runat="server">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=CLMENTGUYON76A9\SQLEXPRESS;Initial Catalog=PROJET_DATA;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="sp_getAeroportsDepart" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         <br />
 &nbsp;&nbsp;&nbsp;
         <br />
 &nbsp;&nbsp;&nbsp; Sélectionner une ville d&#39;arrivée :&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="listVilleArrivee" runat="server" DataSourceID="SqlDataSource2" DataTextField="NOM" DataValueField="ID">
+        <asp:DropDownList ID="listVilleArrivee" runat="server">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PROJET_DATAConnectionString %>" SelectCommand="sp_getAeroportsArrivee" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;
