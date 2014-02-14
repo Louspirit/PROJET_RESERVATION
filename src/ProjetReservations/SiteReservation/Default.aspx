@@ -9,25 +9,22 @@
 </head>
 <body>
     <form id="form1" runat="server">
-<<<<<<< HEAD
-    <div style="height: 979px; width: 1471px; ">
-    
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SITE DE RESERVATION<br />
-        <br />
-&nbsp;&nbsp;&nbsp; Sélectionner une ville de départ :&nbsp;&nbsp;&nbsp;
+    <div id="main_container">
+        <h1>SELECTION VOYAGE</h1>
+        <div class="selection_voyage">
+        Sélectionner une ville de départ :
         <asp:DropDownList ID="listVilleDepart" runat="server">
         </asp:DropDownList>
-        <br />
-&nbsp;&nbsp;&nbsp;
-        <br />
-&nbsp;&nbsp;&nbsp; Sélectionner une ville d&#39;arrivée :&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+
+        <div class="selection_voyage">
+        Sélectionner une ville d&#39;arrivée :
         <asp:DropDownList ID="listVilleArrivee" runat="server">
         </asp:DropDownList>
-        <br />
-        <br />
-&nbsp;&nbsp;&nbsp;
-        Durée du séjour :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+
+        <div class="selection_voyage">
+        Durée du séjour :
         <asp:DropDownList ID="dureeSejour" runat="server">
             <asp:ListItem Selected="True" Value="1"></asp:ListItem>
             <asp:ListItem>2</asp:ListItem>
@@ -51,55 +48,9 @@
             <asp:ListItem>19</asp:ListItem>
             <asp:ListItem>20</asp:ListItem>
         </asp:DropDownList>
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;
-=======
-    <div id="main_container">
-        <h1>SITE DE RESERVATION</h1>
-        <div class="selection_voyage">
-            Sélectionner une ville de départ :
-            <asp:DropDownList ID="listVilleDepart" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOM" DataValueField="ID">
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=CLMENTGUYON76A9\SQLEXPRESS;Initial Catalog=PROJET_DATA;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="sp_getAeroportsDepart" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-        </div>
-
-        <div class="selection_voyage">
-            Sélectionner une ville d&#39;arrivée :
-            <asp:DropDownList ID="listVilleArrivee" runat="server" DataSourceID="SqlDataSource2" DataTextField="NOM" DataValueField="ID">
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PROJET_DATAConnectionString %>" SelectCommand="sp_getAeroportsArrivee" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-        </div>
-
-        <div class="selection_voyage">
-        Durée du séjour :
-            <asp:DropDownList ID="dureeSejour" runat="server">
-                <asp:ListItem Selected="True" Value="1"></asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
-                <asp:ListItem>11</asp:ListItem>
-                <asp:ListItem>12</asp:ListItem>
-                <asp:ListItem>13</asp:ListItem>
-                <asp:ListItem>14</asp:ListItem>
-                <asp:ListItem>15</asp:ListItem>
-                <asp:ListItem>16</asp:ListItem>
-                <asp:ListItem>17</asp:ListItem>
-                <asp:ListItem>18</asp:ListItem>
-                <asp:ListItem>19</asp:ListItem>
-                <asp:ListItem>20</asp:ListItem>
-            </asp:DropDownList>
         </div>
 
         <div class="selection_calendar">
->>>>>>> c5c9c17d8f1de62b6c93debd8e29255ed82d3da6
         Date du départ :
         <div class="calendar">
         <asp:Calendar ID="dateDepart" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
