@@ -1,0 +1,42 @@
+﻿body {
+    font-family: Arial;
+    background-color: #fff;
+}
+
+#main_container{
+    width: 600px;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+    background-color: #f5f9f9;
+    box-shadow: 10px 10px 100px #ddd;
+}
+
+h1 {
+    #color: #d74b4b;
+    color: #333;
+    text-align: center;
+}
+
+.selection_voyage{
+    padding: 10px;
+}
+
+.selection_calendar{
+    text-align: center;
+    width: 300px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar{
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit_btn{
+    text-align: center;
+}
