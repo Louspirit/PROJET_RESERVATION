@@ -1,3 +1,4 @@
+use [PROJET_DATA];
 insert into AEROPORTS (ID, NOM) values ('AGA','Maroc - Agadir');
 insert into AEROPORTS (ID, NOM) values ('ALG','Algérie - Alger');
 insert into AEROPORTS (ID, NOM) values ('BKO','Mali - Bamako');
