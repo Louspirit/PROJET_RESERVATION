@@ -7,8 +7,8 @@
     <ProjectGuid>{5B64B888-AF60-4728-AFC4-F5036067EABE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary2</RootNamespace>
-    <AssemblyName>ClassLibrary2</AssemblyName>
+    <RootNamespace>ClientModel</RootNamespace>
+    <AssemblyName>ClientModel</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

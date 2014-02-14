@@ -24,7 +24,6 @@ namespace libConsulteAeroports
             myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             DataSet DS = new DataSet();
-            myCom.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             myCom.Fill(DS, "table");
             myCom.Dispose();
             myC.Close();
@@ -42,7 +41,6 @@ namespace libConsulteAeroports
             myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             DataSet DS = new DataSet();
-            myCom.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             myCom.Fill(DS, "table");
             myCom.Dispose();
             myC.Close();
