@@ -12,7 +12,7 @@ namespace Model.Hotel
         public DateTime DATE_ARRIVEE { get; set; }
         public int DUREE { get; set; }
         public double MONTANT { get; set; }
-        public clsClient CLIENT { get; set; }
+        public clsClientModel CLIENT { get; set; }
 
         public clsHotelMSMQ() { }
     }

@@ -16,58 +16,44 @@ namespace libClient
     
         }
 
-         [AutoComplete]
-        public clsClient getClient(String nom, String prenom, String adresse)
+        public clsClientModel getClient(String nom, String prenom, String adresse, String num_carte)
         {
             SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source=Environment.MachineName;Initial Catalog=PROJET_RESERVATION;Integrated Security = true";
+            myC.ConnectionString = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=\"PROJET_RESERVATIONS\";Integrated Security=True";
             myC.Open();
 
-            SqlCommand myCom = new SqlCommand("dbo.sp_getClient", myC);
-            myCom.CommandType = CommandType.StoredProcedure;
-            myCom.Parameters.Add("@NOM", SqlDbType.VarChar);
-            myCom.Parameters["@NOM"].Value = nom;
-            myCom.Parameters.Add("@PRENOM", SqlDbType.VarChar);
-            myCom.Parameters["@PRENOM"].Value = prenom;
-            myCom.Parameters.Add("@ADRESSE", SqlDbType.VarChar);
-            myCom.Parameters["@ADRESSE"].Value = prenom;
+            SqlDataAdapter myCom = new SqlDataAdapter("dbo.sp_getClient", myC);
+            myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
+            myCom.SelectCommand.Parameters.Add("@NOM", SqlDbType.VarChar);
+            myCom.SelectCommand.Parameters["@NOM"].Value = nom;
+            myCom.SelectCommand.Parameters.Add("@PRENOM", SqlDbType.VarChar);
+            myCom.SelectCommand.Parameters["@PRENOM"].Value = prenom;
+            myCom.SelectCommand.Parameters.Add("@ADRESSE", SqlDbType.VarChar);
+            myCom.SelectCommand.Parameters["@ADRESSE"].Value = prenom;
+            myCom.SelectCommand.Parameters.Add("@NUM_CARTE", SqlDbType.VarChar);
+            myCom.SelectCommand.Parameters["@NUM_CARTE"].Value = num_carte;
 
-             SqlDataReader reader = myCom.ExecuteReader();
-             clsClient client = new clsClient();
-             while (reader.Read())
-             {
-                 client.ID = reader.GetInt32(0);
-                 client.NOM = reader.GetString(1);
-                 client.PRENOM = reader.GetString(2);
-                 client.ADRESSE = reader.GetString(3);
-                 client.NUM_CARTE = reader.GetString(4);
-             }
+            DataSet DS = new DataSet();
+            myCom.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            myCom.Fill(DS, "table");
             myCom.Dispose();
             myC.Close();
-            return client;
-        }
 
-        [AutoComplete]
-        public void addClient(string nom, String prenom,String adresse, String numeroCarte)
-        {
-            SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source=Environment.MachineName;Initial Catalog=PROJET_RESERVATIONS;Integrated Security = true";
-            myC.Open();
+            if (DS.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                clsClientModel client = new clsClientModel();
+                client.ID = Convert.ToInt32(DS.Tables[0].Rows[0][0].ToString());
+                client.NOM = DS.Tables[0].Rows[0][1].ToString();
+                client.PRENOM = DS.Tables[0].Rows[0][2].ToString();
+                client.ADRESSE = DS.Tables[0].Rows[0][3].ToString();
+                client.NUM_CARTE = DS.Tables[0].Rows[0][4].ToString();
 
-            SqlCommand myCom = new SqlCommand("dbo.sp_addClient", myC);
-            myCom.CommandType = CommandType.StoredProcedure;
-            myCom.Parameters.Add("@NOM", SqlDbType.VarChar);
-            myCom.Parameters["@NOM"].Value = nom;
-            myCom.Parameters.Add("@PRENOM", SqlDbType.VarChar);
-            myCom.Parameters["@PRENOM"].Value = prenom;
-            myCom.Parameters.Add("@ADRESSE", SqlDbType.VarChar);
-            myCom.Parameters["@ADRESSE"].Value = adresse;
-            myCom.Parameters.Add("@NUM_CARTE", SqlDbType.VarChar);
-            myCom.Parameters["@NUM_CARTE"].Value = numeroCarte;   
-
-            myCom.ExecuteNonQuery();
-            myCom.Dispose();
-            myC.Close();
+                return client;
+            }
         }
     }
 }

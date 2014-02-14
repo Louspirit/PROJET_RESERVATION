@@ -10,7 +10,7 @@ namespace Model.Vol
         public int? ID { get; set; }
         public int ID_VOL { get; set; }
         public double MONTANT { get; set; }
-        public clsClient CLIENT { get; set; }
+        public clsClientModel CLIENT { get; set; }
 
         public clsVolMSMQ() { }
     }

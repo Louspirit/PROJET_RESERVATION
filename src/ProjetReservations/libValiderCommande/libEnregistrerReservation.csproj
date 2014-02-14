@@ -36,10 +36,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsValiderCommande.cs" />
+    <Compile Include="clsEnregistrerReservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\VolModel.csproj">
+      <Project>{9529c3dd-01cf-497f-8b70-4246c472c672}</Project>
+      <Name>VolModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelModel\HotelModel.csproj">
+      <Project>{a2912ae5-b45d-47ad-be26-688f749b577c}</Project>
+      <Name>HotelModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\libReservationHotel\libReservationHotel.csproj">
       <Project>{0262ea23-9a51-45f3-ab1e-43f0e9c2055e}</Project>
       <Name>libReservationHotel</Name>

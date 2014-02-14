@@ -39,7 +39,7 @@ namespace SiteReservation
             {
                 errorMsg.Text = "";
                 //preparation donnees pour le push MSMQ
-                clsClient client = new clsClient();
+                clsClientModel client = new clsClientModel();
                 client.NOM = nomClient;
                 client.PRENOM = prenomClient;
                 client.ADRESSE = adresseClient;

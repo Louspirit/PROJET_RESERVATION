@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libClient", "libClient\libC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnregistrementReservations", "EnregistrementReservations\EnregistrementReservations.csproj", "{C9B6AF81-62CD-459A-9493-AD86AC47CC42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libValiderCommande", "libValiderCommande\libValiderCommande.csproj", "{F47EF90A-A6E8-4BEA-9B13-01D1DBEB5246}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libEnregistrerReservation", "libValiderCommande\libEnregistrerReservation.csproj", "{F47EF90A-A6E8-4BEA-9B13-01D1DBEB5246}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
