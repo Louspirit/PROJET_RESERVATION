@@ -130,6 +130,15 @@ namespace SiteReservation {
         protected global::System.Web.UI.WebControls.TextBox tbNumCarteClient;
         
         /// <summary>
+        /// Contrôle btnRetour.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRetour;
+        
+        /// <summary>
         /// Contrôle btnValiderCommande.
         /// </summary>
         /// <remarks>
@@ -146,5 +155,23 @@ namespace SiteReservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label errorMsg;
+        
+        /// <summary>
+        /// Contrôle LabelReservOk.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelReservOk;
+        
+        /// <summary>
+        /// Contrôle btnRetHome.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRetHome;
     }
 }

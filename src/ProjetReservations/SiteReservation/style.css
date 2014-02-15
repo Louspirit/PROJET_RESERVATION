@@ -39,3 +39,12 @@ h1 {
 .submit_btn{
     text-align: center;
 }
+
+.selected_table_row{
+    background-color: lightgrey;
+}
+
+.tableau_resultats{
+    padding: 2px;
+    text-align: center;
+}

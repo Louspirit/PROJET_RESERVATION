@@ -35,7 +35,12 @@ namespace SiteReservation
             int date_depart_mois = dateDepart.SelectedDate.Month;
             int date_depart_jour = dateDepart.SelectedDate.Day;
             //controle sur les données saisies
-            if(null != aeroport_depart && null != aeroport_arrivee && null != duree && 1 != date_depart_annee && 1 != date_depart_mois && 1 != date_depart_jour){
+            if (null == aeroport_depart || null == aeroport_arrivee || null == duree || (1 == date_depart_annee && 1 == date_depart_mois && 1 == date_depart_jour))
+            {
+                errorMsg.Text = "Veuillez vérifier votre saisie.";
+            }
+            else
+            {
                 errorMsg.Text = "";
                 Session["aeroport_depart"] = aeroport_depart;
                 Session["aeroport_arrivee"] = aeroport_arrivee;
@@ -44,10 +49,6 @@ namespace SiteReservation
                 Session["date_depart_mois"] = date_depart_mois;
                 Session["date_depart_jour"] = date_depart_jour;
                 Response.Redirect("ResultatsRecherche.aspx");
-            }
-            else
-            {
-                errorMsg.Text = "Veuillez vérifier votre saisie.";
             }
         }
     }

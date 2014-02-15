@@ -16,34 +16,50 @@ namespace libConsulteAeroports
 
         public DataSet getAeroportsArrivee()
         {
-            //appel de sp_getAeroportsArrivee avec les paramètres
-            SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=\"PROJET_DATA\";Integrated Security=True";
-            myC.Open();
-            SqlDataAdapter myCom = new SqlDataAdapter("dbo.sp_getAeroportsArrivee", myC);
-            myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
-
             DataSet DS = new DataSet();
-            myCom.Fill(DS, "table");
-            myCom.Dispose();
-            myC.Close();
+            try
+            {
+                //appel de sp_getAeroportsArrivee avec les paramètres
+                SqlConnection myC = new SqlConnection();
+                myC.ConnectionString = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=\"PROJET_DATA\";Integrated Security=True";
+                myC.Open();
+                SqlDataAdapter myCom = new SqlDataAdapter("dbo.sp_getAeroportsArrivee", myC);
+                myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                myCom.Fill(DS, "table");
+                myCom.Dispose();
+                myC.Close();
+            }
+            catch
+            {
+                return DS;
+            }
+            
             return DS;
         }
 
 
         public DataSet getAeroportsDepart()
         {
-            //appel de sp_getAeroportsDepart avec les paramètres
-            SqlConnection myC = new SqlConnection();
-            myC.ConnectionString = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=\"PROJET_DATA\";Integrated Security=True";
-            myC.Open();
-            SqlDataAdapter myCom = new SqlDataAdapter("dbo.sp_getAeroportsDepart", myC);
-            myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
-
             DataSet DS = new DataSet();
-            myCom.Fill(DS, "table");
-            myCom.Dispose();
-            myC.Close();
+            try
+            {
+                //appel de sp_getAeroportsDepart avec les paramètres
+                SqlConnection myC = new SqlConnection();
+                myC.ConnectionString = "Data Source=" + Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=\"PROJET_DATA\";Integrated Security=True";
+                myC.Open();
+                SqlDataAdapter myCom = new SqlDataAdapter("dbo.sp_getAeroportsDepart", myC);
+                myCom.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                myCom.Fill(DS, "table");
+                myCom.Dispose();
+                myC.Close();
+            }
+            catch
+            {
+                return DS;
+            }
+
             return DS;
         }
     }

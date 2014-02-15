@@ -57,19 +57,41 @@ namespace SiteReservation
                 resaVol.MONTANT = (Double)Session["volTarif"];
                 resaVol.CLIENT = client;
 
-                //push MSMQ
-                MessageQueue MyMQ = new MessageQueue(@".\private$\queuereservationhotel");
-                MyMQ.Send(resaHotel, "Reservation hotel, client "+nomClient+" - "+prenomClient);
-                MyMQ.Close();
+                try
+                {
+                    //push MSMQ
+                    MessageQueue MyMQ = new MessageQueue(@".\private$\queuereservationhotel");
+                    MyMQ.Send(resaHotel, "Reservation hotel, client " + nomClient + " - " + prenomClient);
+                    MyMQ.Close();
 
-                MessageQueue MyMQ2 = new MessageQueue(@".\private$\queuereservationvol");
-                MyMQ2.Send(resaVol, "Reservation vol, client " + nomClient + " - " + prenomClient);
-                MyMQ2.Close();
+                    MessageQueue MyMQ2 = new MessageQueue(@".\private$\queuereservationvol");
+                    MyMQ2.Send(resaVol, "Reservation vol, client " + nomClient + " - " + prenomClient);
+                    MyMQ2.Close();
+                }
+                catch
+                {
+                    errorMsg.Text = "Une erreur est survenue lors de l'enregistrement de votre réservation.\nVeuillez réessayer plus tard.";
+                    return;
+                }
 
                 //fin des push
-                btnValiderCommande.Enabled = false;
-                errorMsg.Text = "Votre réservation a bien été prise en compte.";
+                btnValiderCommande.Visible = false;
+                btnRetour.Visible = false;
+                errorMsg.Text = "";
+                LabelReservOk.Text = "Votre réservation a bien été prise en compte.";
+                btnRetHome.Visible = true;
             }
+        }
+
+        protected void btnRetour_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ResultatsRecherche.aspx");
+        }
+
+        protected void btnRetHome_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Default.aspx");
         }
     }
 }

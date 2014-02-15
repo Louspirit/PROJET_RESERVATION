@@ -67,9 +67,13 @@
         <br />
 
     <div class="submit_btn">
-    <asp:Button ID="btnValiderCommande" runat="server" OnClick="validerCommande" Text="Valider votre réservation" />
+        <asp:Button ID="btnRetour" runat="server" OnClick="btnRetour_Click" Text="Retour aux résultats" />
+&nbsp;<asp:Button ID="btnValiderCommande" runat="server" OnClick="validerCommande" Text="Valider votre réservation" />
         <br />
     <asp:Label ID="errorMsg" runat="server" BackColor="Orange"></asp:Label>
+        <asp:Label ID="LabelReservOk" runat="server"></asp:Label>
+        <br />
+        <asp:Button ID="btnRetHome" runat="server" OnClick="btnRetHome_Click" Text="Retourner à la page d'accueil" Visible="False" />
     </div>
     </div>
     </div>

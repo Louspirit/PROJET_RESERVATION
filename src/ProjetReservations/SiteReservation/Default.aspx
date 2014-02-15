@@ -68,6 +68,7 @@
 
         <div class="submit_btn">
         <asp:Button ID="buttonReservation" runat="server" Text="Rechercher" OnClick="rechercherVolsHotels"/>
+            <br />
         <asp:Label ID="errorMsg" runat="server" BackColor="Orange"></asp:Label>
         </div>  
     </div>

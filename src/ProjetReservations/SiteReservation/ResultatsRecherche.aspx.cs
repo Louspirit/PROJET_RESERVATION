@@ -25,26 +25,43 @@ namespace SiteReservation
             int date_depart_jour = (int)Session["date_depart_jour"];
             int duree = (int)Session["duree"];
 
-            labelRequestParam.Text = "Depart "+aeroport_depart+", Arrivee "+aeroport_arrivee+", Duree "+duree +", Date "+date_depart_annee.ToString()+"-"+date_depart_mois.ToString()+"-"+date_depart_jour.ToString();
+            labelRequestParam.Text = "Depart "+aeroport_depart+", Arrivee "+aeroport_arrivee+", Duree "+duree +" jours, Date "+date_depart_annee.ToString()+"-"+date_depart_mois.ToString()+"-"+date_depart_jour.ToString();
     
             //récupération des vols
             DataSet vols = (new WSVolConsultation.Service1()).getVols(aeroport_depart, aeroport_arrivee, date_depart_annee, date_depart_mois, date_depart_jour);
-            vols.Tables[0].Columns[0].ColumnName = "Numero de vol";
-            vols.Tables[0].Columns[1].ColumnName = "Aeroport depart";
-            vols.Tables[0].Columns[2].ColumnName = "Aeroport arrivee";
-            vols.Tables[0].Columns[3].ColumnName = "Date vol";
-            vols.Tables[0].Columns[4].ColumnName = "Tarif billet";
-            listVols.DataSource = vols.Tables[0];
-            listVols.DataBind();
+            if (vols.Tables.Count == 0 || vols.Tables[0].Rows.Count == 0)
+            {
+                labelNoVols.Text = "Aucun vol n'a été trouvé pour votre recherche.";
+                buttonValiderCommande.Visible = false;
+            }
+            else
+            {
+                vols.Tables[0].Columns[0].ColumnName = "Numero de vol";
+                vols.Tables[0].Columns[1].ColumnName = "Aeroport depart";
+                vols.Tables[0].Columns[2].ColumnName = "Aeroport arrivee";
+                vols.Tables[0].Columns[3].ColumnName = "Date vol";
+                vols.Tables[0].Columns[4].ColumnName = "Tarif billet";
+                listVols.DataSource = vols.Tables[0];
+                listVols.DataBind();
+            }
+
             //récupération hotels
             DataSet hotels = (new WSHotelConsultation.Service1()).getHotels(aeroport_arrivee);
-            hotels.Tables[0].Columns[0].ColumnName = "Identifiant hotel";
-            hotels.Tables[0].Columns[1].ColumnName = "Nom de l'hotel";
-            hotels.Tables[0].Columns[2].ColumnName = "Adresse";
-            hotels.Tables[0].Columns[4].ColumnName = "Tarif / nuit";
-            hotels.Tables[0].Columns.RemoveAt(3);
-            listHotels.DataSource = hotels.Tables[0];
-            listHotels.DataBind();
+            if (hotels.Tables.Count == 0 || hotels.Tables[0].Rows.Count == 0)
+            {
+                labelNoHotels.Text = "Aucun hotel n'a été trouvé pour votre recherche.";
+                buttonValiderCommande.Visible = false;
+            }
+            else
+            {
+                hotels.Tables[0].Columns[0].ColumnName = "Identifiant hotel";
+                hotels.Tables[0].Columns[1].ColumnName = "Nom de l'hotel";
+                hotels.Tables[0].Columns[2].ColumnName = "Adresse";
+                hotels.Tables[0].Columns[4].ColumnName = "Tarif / nuit";
+                hotels.Tables[0].Columns.RemoveAt(3);
+                listHotels.DataSource = hotels.Tables[0];
+                listHotels.DataBind();
+            }
         }
 
         protected void selectionVol(object sender, EventArgs e)
@@ -55,6 +72,11 @@ namespace SiteReservation
             selectedVolArrivee.Text = row.Cells[3].Text;
             selectedVolDate.Text = row.Cells[4].Text;
             selectedVolTarif.Text = row.Cells[5].Text;
+            for (int i = 0; i < listVols.Rows.Count; i++ )
+            {
+                listVols.Rows[i].CssClass = "";
+            }
+            row.CssClass = "selected_table_row";
         }
 
         protected void selectionHotel(object sender, EventArgs e)
@@ -64,6 +86,11 @@ namespace SiteReservation
             selectedHotelNom.Text = row.Cells[2].Text;
             selectedHotelAdresse.Text = row.Cells[3].Text;
             selectedHotelTarifNuit.Text = row.Cells[4].Text;
+            for (int i = 0; i < listHotels.Rows.Count; i++)
+            {
+                listHotels.Rows[i].CssClass = "";
+            }
+            row.CssClass = "selected_table_row";
         }
 
         protected void validerSelection(object sender, EventArgs e)
@@ -93,6 +120,11 @@ namespace SiteReservation
                 Session["montantTotalReservation"] = tarifVol + tarifTotalHotel;
                 Response.Redirect("InfosClient.aspx");
             }
+        }
+
+        protected void btnRetour_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

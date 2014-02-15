@@ -31,6 +31,15 @@ namespace SiteReservation {
         protected global::System.Web.UI.WebControls.Label labelRequestParam;
         
         /// <summary>
+        /// Contrôle labelNoVols.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelNoVols;
+        
+        /// <summary>
         /// Contrôle listVols.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace SiteReservation {
         protected global::System.Web.UI.WebControls.Label selectedVolTarif;
         
         /// <summary>
+        /// Contrôle labelNoHotels.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelNoHotels;
+        
+        /// <summary>
         /// Contrôle listHotels.
         /// </summary>
         /// <remarks>
@@ -128,6 +146,15 @@ namespace SiteReservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label selectedHotelTarifNuit;
+        
+        /// <summary>
+        /// Contrôle btnRetour.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRetour;
         
         /// <summary>
         /// Contrôle buttonValiderCommande.
