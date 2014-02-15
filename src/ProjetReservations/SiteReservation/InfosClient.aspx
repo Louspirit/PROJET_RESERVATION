@@ -8,6 +8,12 @@
     <title></title>
     <link rel="stylesheet" media="screen" type="text/css" title="Style" href="./style.css" />
 
+    <style type="text/css">
+        .auto-style1 {
+            text-decoration: underline;
+        }
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,6 +21,7 @@
     <h1>RAPPEL DES INFORMATIONS</h1>
     <div class="selection_voyage">
     <strong>Rappel de votre sélection :</strong>
+        <br />
     Vol au départ de
         <asp:Label ID="rappelVolDepart" runat="server"></asp:Label>
     en destination de
@@ -36,24 +43,32 @@
     </div> 
     
     <div class="selection_voyage">    
-    <span class="auto-style1">Montant total de votre réservation : </span>
-        <asp:Label ID="montantTotalReservation" runat="server" CssClass="auto-style1"></asp:Label>
-        <span class="auto-style1">&nbsp;euros.</span><br />
+    <span class="auto-style1">Montant total de votre réservation</span>
+        :
+        <asp:Label ID="montantTotalReservation" runat="server"></asp:Label>
+        &nbsp;euros.<br />
     </div>
 
     <div class="selection_voyage">
     <strong>Veuillez saisir les informations suivantes :</strong><br />
     Nom* :
         <asp:TextBox ID="tbNomClient" runat="server" MaxLength="50"></asp:TextBox>
+        <br />
     Prenom* :
         <asp:TextBox ID="tbPrenomClient" runat="server" MaxLength="50"></asp:TextBox>
+        <br />
     Adresse* :
         <asp:TextBox ID="tbAdresseClient" runat="server" MaxLength="200"></asp:TextBox>
+        <br />
     Numéro de carte bancaire* :
         <asp:TextBox ID="tbNumCarteClient" runat="server" MaxLength="20"></asp:TextBox>
 
+        <br />
+        <br />
+
     <div class="submit_btn">
     <asp:Button ID="btnValiderCommande" runat="server" OnClick="validerCommande" Text="Valider votre réservation" />
+        <br />
     <asp:Label ID="errorMsg" runat="server" BackColor="Orange"></asp:Label>
     </div>
     </div>
