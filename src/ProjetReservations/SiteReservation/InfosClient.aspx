@@ -23,30 +23,30 @@
     <strong>Rappel de votre sélection :</strong>
         <br />
     Vol au départ de
-        <asp:Label ID="rappelVolDepart" runat="server"></asp:Label>
+        <asp:Label ID="rappelVolDepart" runat="server" Font-Bold="True"></asp:Label>
     en destination de
-        <asp:Label ID="rappelVolArrivee" runat="server"></asp:Label>
+        <asp:Label ID="rappelVolArrivee" runat="server" Font-Bold="True"></asp:Label>
     le
         <asp:Label ID="rappelVolDate" runat="server"></asp:Label>
     pour un montant total de
-        <asp:Label ID="rappelVolMontant" runat="server"></asp:Label>
-    euros.
+        <asp:Label ID="rappelVolMontant" runat="server" Font-Bold="True"></asp:Label>
+        <strong>€</strong>.&nbsp;
     </div>
     
     <div class="selection_voyage">            
-    Hotel &quot;<asp:Label ID="rappelHotelNom" runat="server"></asp:Label>
-    &quot; pour une durée de
-        <asp:Label ID="rappelHotelDuree" runat="server"></asp:Label>
+        Hotel <asp:Label ID="rappelHotelNom" runat="server" Font-Bold="True"></asp:Label>
+    &nbsp;pour une durée de
+        <asp:Label ID="rappelHotelDuree" runat="server" Font-Bold="False"></asp:Label>
     jour(s) et un montant total de
-        <asp:Label ID="rappelHotelMontantTotal" runat="server"></asp:Label>
-     euros.
+        <asp:Label ID="rappelHotelMontantTotal" runat="server" Font-Bold="True"></asp:Label>
+        <strong>€</strong>.
     </div> 
     
     <div class="selection_voyage">    
     <span class="auto-style1">Montant total de votre réservation</span>
         :
-        <asp:Label ID="montantTotalReservation" runat="server"></asp:Label>
-        &nbsp;euros.<br />
+        <asp:Label ID="montantTotalReservation" runat="server" Font-Bold="True"></asp:Label>
+        <strong>€</strong>. <br />
     </div>
 
     <div class="selection_voyage">

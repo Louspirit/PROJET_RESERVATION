@@ -25,7 +25,7 @@ namespace SiteReservation
             int date_depart_jour = (int)Session["date_depart_jour"];
             int duree = (int)Session["duree"];
 
-            labelRequestParam.Text = "Depart "+aeroport_depart+", Arrivee "+aeroport_arrivee+", Duree "+duree +" jours, Date "+date_depart_annee.ToString()+"-"+date_depart_mois.ToString()+"-"+date_depart_jour.ToString();
+            labelRequestParam.Text = "Depart de : "+aeroport_depart+", Arrivee à : "+aeroport_arrivee+", Date de départ: "+date_depart_annee.ToString()+"-"+date_depart_mois.ToString()+"-"+date_depart_jour.ToString()+", Duree du séjour : "+duree +" jour(s)";
     
             //récupération des vols
             DataSet vols = (new WSVolConsultation.Service1()).getVols(aeroport_depart, aeroport_arrivee, date_depart_annee, date_depart_mois, date_depart_jour);

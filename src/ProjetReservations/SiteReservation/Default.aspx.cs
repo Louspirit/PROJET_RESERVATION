@@ -35,9 +35,12 @@ namespace SiteReservation
             int date_depart_mois = dateDepart.SelectedDate.Month;
             int date_depart_jour = dateDepart.SelectedDate.Day;
             //controle sur les données saisies
-            if (null == aeroport_depart || null == aeroport_arrivee || null == duree || (1 == date_depart_annee && 1 == date_depart_mois && 1 == date_depart_jour))
+            if (null == aeroport_depart || null == aeroport_arrivee || null == duree)
             {
                 errorMsg.Text = "Veuillez vérifier votre saisie.";
+            } if (1 == date_depart_annee && 1 == date_depart_mois && 1 == date_depart_jour)
+            {
+                errorMsg.Text = "Veuillez sélectionner une date.";
             }
             else
             {
